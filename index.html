@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oleg Detailing Lab | Cura e Conservazione Interni Auto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #f9f8f6;       /* Теплий кремовий фон (Old Money) */
+            --bg-card: #ffffff;       /* Чисто-білий фон карток */
+            --bg-card-hover: #f3f1ec; /* Легкий відтінок при наведенні */
+            --accent-green: #3a5a40;  /* Стриманий смарагдовий */
+            --accent-gold: #9c7c38;   /* Шляхетне матове золото */
+            --text-primary: #1f2421;  /* Глибокий графітовий для тексту */
+            --text-secondary: #6b726e;/* М'який сіро-бежевий для описів */
+            --border-color: #e2ded6;  /* Ніжні світлі рамки */
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            padding-bottom: 80px;
+        }
+
+        /* Шляхетна типографіка для заголовків */
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header / Hero */
+        header {
+            text-align: center;
+            padding: 50px 20px 35px;
+            background: linear-gradient(180deg, #ffffff 0%, var(--bg-main) 100%);
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .logo-img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 520px;
+            margin: 0 auto 20px;
+        }
+
+        .tagline {
+            display: inline-block;
+            background: rgba(156, 124, 56, 0.08);
+            color: var(--accent-gold);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid rgba(156, 124, 56, 0.2);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Sections */
+        .section-title {
+            font-size: 26px;
+            font-weight: 600;
+            margin: 40px 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-primary);
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        /* About Master Banner */
+        .trust-banner {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .trust-banner .badge {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .trust-banner h4 {
+            font-size: 22px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        .trust-banner p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Instagram Highlight Card */
+        .instagram-highlight {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: border-color 0.2s;
+        }
+
+        .instagram-highlight:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .instagram-highlight h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .instagram-highlight p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--text-primary);
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--text-primary);
+            color: #ffffff;
+        }
+
+        /* Features Cards */
+        .grid-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .feature-card:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .feature-card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .price-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 28px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card.featured {
+            border-color: var(--accent-green);
+            box-shadow: 0 4px 20px rgba(58, 90, 64, 0.05);
+        }
+
+        .price-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(58, 90, 64, 0.1);
+            color: var(--accent-green);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .price-card h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .price-card .desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .checklist li {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .checklist li::before {
+            content: "—";
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .pricing-table {
+            background: var(--bg-card-hover);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-row .cat {
+            color: var(--text-secondary);
+        }
+
+        .pricing-row .price {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Extras */
+        .extras-list {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            padding: 16px 24px;
+        }
+
+        .extra-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+
+        .extra-item:last-child {
+            border-bottom: none;
+        }
+
+        .extra-item span {
+            color: var(--text-secondary);
+        }
+
+        .extra-item strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* CTA WhatsApp Sticky Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 500px;
+            background: var(--accent-green);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            padding: 16px;
+            border-radius: 50px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(58, 90, 64, 0.25);
+            z-index: 100;
+            letter-spacing: 0.5px;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #2d4732;
+        }
+
+        .whatsapp-btn:active {
+            transform: translateX(-50%) scale(0.98);
+        }
+
+        .footer-info {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.png" alt="Oleg Detailing Lab" class="logo-img">
+        <h1>Cura e Sicurezza Interni Auto</h1>
+        <p class="subtitle">Detailing professionale a domicilio in tutta la provincia di Monza e Brianza.</p>
+        <span class="tagline">Servizio a domicilio su appuntamento</span>
+    </header>
+
+    <div class="container">
+        
+        <!-- About Master Section -->
+        <div class="trust-banner">
+            <span class="badge">Master Detailer</span>
+            <h4>Oleg | Cura Artigianale</h4>
+            <p>Esecuzione diretta e massima attenzione ai dettagli, senza intermediari. Ogni intervento è seguito personalmente per garantire standard di conservazione elevati direttamente a casa tua.</p>
+        </div>
+
+        <!-- Instagram Highlight -->
+        <div class="instagram-highlight">
+            <h3>I Nostri Lavori</h3>
+            <p>Guarda i reportage fotografici dei trattamenti eseguiti e i risultati prima/dopo sul nostro profilo.</p>
+            <a href="https://instagram.com/olegdetailinglab" target="_blank" class="btn-outline">Visita Instagram</a>
+        </div>
+
+        <!-- Advantages -->
+        <h2 class="section-title">Standard di Lavorazione</h2>
+        <div class="grid-features">
+            <div class="feature-card">
+                <h3>Sicurezza Elettronica</h3>
+                <p>Protezione assoluta di componenti digitali, schermi e centraline. Nessun utilizzo di vapore aggressivo su parti delicate.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Chimica Certificata</h3>
+                <p>Selezione rigorosa di formulazioni tecniche italiane e tedesche ad altissima efficacia e rispetto dei materiali.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Cura Manuale</h3>
+                <p>Trattamento sartoriale con setole naturali selezionate per preservare la struttura originale di pelle, Alcantara e finiture.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Servizio a Domicilio</h3>
+                <p>Massimo comfort: operiamo direttamente presso la vostra residenza in Monza e Brianza. Richiesta solo presa elettrica 220V.</p>
+            </div>
+        </div>
+
+        <!-- Pricing Packages -->
+        <h2 class="section-title">Listino Trattamenti</h2>
+        <div class="pricing-grid">
+            
+            <!-- Essential -->
+            <div class="price-card">
+                <h3>PACCHETTO ESSENTIAL</h3>
+                <p class="desc">Mantenimento periodico, pulizia tecnica di precisione e protezione delle superfici.</p>
+                <ul class="checklist">
+                    <li>Aspirazione tecnica approfondita di abitacolo e bagagliaio</li>
+                    <li>Igienizzazione mirata di moquette e tappetini con pH neutro</li>
+                    <li>Barriera protettiva anti-UV satinata per plancia e plastiche</li>
+                    <li>Detersione di sicurezza per display e consolle delicate</li>
+                    <li>Finitura trasparente vetri interni senza aloni</li>
+                </ul>
+                <div class="pricing-table">
+                    <div class="pricing-row">
+                        <span class="cat">City Car / Utilitarie</span>
+                        <span class="price">da €50</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="cat">Berline / Station Wagon</span>
+                        <span class="price">da €60</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="cat">SUV / 7 Posti</span>
+                        <span class="price">da €75</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comfort & Detailed -->
+            <div class="price-card featured">
+                <span class="price-badge">Consigliato</span>
+                <h3>PACCHETTO COMFORT & DETAILED</h3>
+                <p class="desc">Rinnovamento profondo dell'abitacolo, igienizzazione radicale e nutrizione dei pellami.</p>
+                <ul class="checklist">
+                    <li>Tutti i servizi inclusi nel pacchetto Essential</li>
+                    <li>Detersione profonda sedili (estrazione tessuti o trattamento specifico pelle/Alcantara)</li>
+                    <li>Pulizia tecnica e delicata del cielo dell'auto</li>
+                    <li>Rimozione mirata di macchie difficili e decongestione fibre</li>
+                    <li>Igienizzazione a vapore delle bocchette d'aria e climatizzazione</li>
+                    <li>Applicazione di balsami nutrienti per ripristinare la morbidezza della pelle</li>
+                </ul>
+                <div class="pricing-table">
+                    <div class="pricing-row">
+                        <span class="cat">City Car / Utilitarie</span>
+                        <span class="price">da €150</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="cat">Berline / Station Wagon</span>
+                        <span class="price">da €160</span>
+                    </div>
+                    <div class="pricing-row">
+                        <span class="cat">SUV / 7 Posti</span>
+                        <span class="price">da €175</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Extras -->
+        <h2 class="section-title">Servizi Supplementari</h2>
+        <div class="extras-list">
+            <div class="extra-item">
+                <span>Trattamento Sedile Singolo</span>
+                <strong>da €30</strong>
+            </div>
+            <div class="extra-item">
+                <span>Rimozione Sporco Straordinario / Peli Animali</span>
+                <strong>da €15</strong>
+            </div>
+            <div class="extra-item">
+                <span>Igienizzazione Vano Bagagliaio ad alto contaminante</span>
+                <strong>da €15</strong>
+            </div>
+            <div class="extra-item">
+                <span>Uscita oltre 20 km da Seregno</span>
+                <strong> da €15</strong>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-info">
+            <p><strong>OLEG DETAILING LAB</strong></p>
+            <p>Seregno | Monza e Brianza | Tel: +39 379 364 0202</p>
+        </div>
+
+    </div>
+
+    <!-- WhatsApp CTA -->
+    <a href="https://wa.me/393793640202?text=Ciao%21%20Vorrei%20richiedere%20un%20preventivo%20per%20la%20mia%20auto.%0A%0AMarca:%20%0AModello:%20%0AZona:%20" target="_blank" class="whatsapp-btn">
+        <span>Richiedi preventivo su WhatsApp</span>
+    </a>
+
+</body>
+</html>
