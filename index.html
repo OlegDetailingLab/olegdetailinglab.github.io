@@ -342,7 +342,26 @@
             color: var(--text-primary);
             font-weight: 600;
         }
+.extra-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
 
+        .extra-item span {
+            color: var(--text-secondary);
+        }
+
+        .extra-item strong {
+            color: var(--text-primary);
+            font-weight: 600;
+            white-space: nowrap; /* Гарантує, що ціна не розіб'ється на два рядки */
+            text-align: right;
+        }
         /* CTA WhatsApp Sticky Button */
         .whatsapp-btn {
             position: fixed;
@@ -502,15 +521,19 @@
             </div>
             <div class="extra-item">
                 <span>Rimozione Sporco Straordinario / Peli Animali</span>
-                <strong>da €15</strong>
+                <strong>€15 - €30</strong>
             </div>
             <div class="extra-item">
                 <span>Igienizzazione Vano Bagagliaio ad alto contaminante</span>
                 <strong>da €15</strong>
             </div>
             <div class="extra-item">
-                <span>Uscita oltre 20 km da Seregno</span>
-                <strong> da €15</strong>
+                <span>Servizio a domicilio (entro 20 km)</span>
+                <strong>Incluso</strong>
+            </div>
+            <div class="extra-item">
+                <span>Trasferta oltre i 20 km da Seregno</span>
+                <strong>da €15</strong>
             </div>
         </div>
 
